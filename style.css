@@ -1,0 +1,25 @@
+.item-margin{
+  margin-right:70px;
+}
+.btn-search{
+    background-color: #076860a4 !important;
+    color: white !important;
+}
+#wrong-search{
+    display: none;
+    color: brown;
+    font-weight: 550;
+}
+
+#showing-meals
+{
+    cursor: pointer;
+}
+
+.food_deatails{
+    background-color: rgb(195, 236, 238);
+    width: 100%;
+}
+
+
+  
