@@ -16,18 +16,16 @@ searchBtn.addEventListener('click', function () {
     }
 });
 
-const fetchMealsData = mealsName => {
+const fetchMealsData = async (mealsName) => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealsName}`;
     try{
-        fetch(url)
-        .then(res => res.json())
-        .then(data => {
+        const res = await fetch(url);
+        const data = await res.json();
             if(data.meals === null || data.meals === undefined || data.meals === ''){
                 mealsNotFound.style.display = 'block';
             } else{
                 displayMealsData(data.meals)
             }
-        })
     }
     catch(error){
         console.log(error);
@@ -52,12 +50,12 @@ const displayMealsData = (mealsInfo) => {
     });
 }
 
-const singleMealDeatils = idMeal =>{
+const singleMealDeatils = async (idMeal) =>{
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
     try{
-        fetch(url)
-        .then(res => res.json())
-        .then(data => renderMealInfo(data.meals[0]))
+        const res = await fetch(url);
+        const data = await res.json();
+        renderMealInfo(data.meals[0]);
     }
     catch(error){
         console.log(error);

@@ -19,6 +19,9 @@
 .food_deatails{
     background-color: rgb(195, 236, 238);
     width: 100%;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 7px;
 }
 
 
